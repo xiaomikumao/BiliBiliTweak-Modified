@@ -1,0 +1,84 @@
+name: Build BiliBiliTweak
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:  # 允许手动触发
+
+jobs:
+  build:
+    name: Build on macOS
+    runs-on: macos-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+      with:
+        submodules: 'recursive'
+    
+    - name: Install Theos
+      run: |
+        export THEOS=/opt/theos
+        if [ ! -d "$THEOS" ]; then
+          sudo git clone --recursive https://github.com/theos/theos.git $THEOS
+        fi
+        echo "THEOS=/opt/theos" >> $GITHUB_ENV
+        echo "PATH=$THEOS/bin:$PATH" >> $GITHUB_ENV
+    
+    - name: Install dependencies
+      run: |
+        brew install ldid xz
+        sudo gem install xcodeproj
+    
+    - name: Setup Theos platform
+      run: |
+        export THEOS=/opt/theos
+        $THEOS/bin/nic.pl -p ios/tool 2>/dev/null || true
+    
+    - name: Build with Make
+      run: |
+        cd ${{ github.workspace }}
+        export THEOS=/opt/theos
+        make clean || true
+        make package FINALPACKAGE=1
+        
+    - name: Upload artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: BiliBiliTweak-${{ github.run_number }}
+        path: |
+          packages/*.deb
+          .theos/obj/*.dylib
+        retention-days: 90
+    
+    - name: Create Release
+      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+      uses: softprops/action-gh-release@v1
+      with:
+        tag_name: build-${{ github.run_number }}
+        name: Auto Build ${{ github.run_number }}
+        body: |
+          🎉 自动编译版本
+          
+          ## 修改说明
+          - ✅ 保留直播间右上角人数显示
+          - ✅ 保留礼物特效
+          - ✅ 其他去广告功能保持不变
+          
+          ## 安装方法
+          1. 下载下面的 .deb 文件
+          2. 使用 Filza 或其他文件管理器安装
+          3. 重启 BiliBili APP
+          
+          ## 文件说明
+          - `.deb` 文件：用于越狱设备安装
+          - `.dylib` 文件：用于巨魔注入
+        files: |
+          packages/*.deb
+          .theos/obj/*.dylib
+        draft: false
+        prerelease: false
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,454 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BF09ABB62E4CA1A400160C03 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF09ABB52E4CA1A400160C03 /* QuartzCore.framework */; };
+		BF09AC312E4CB55200160C03 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BF09AC2C2E4CB39B00160C03 /* libz.tbd */; };
+		BF09AC322E4CB55C00160C03 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BF09ABB92E4CA33C00160C03 /* libiconv.tbd */; };
+		BF09AC332E4CB56B00160C03 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF09ABB72E4CA1E600160C03 /* Security.framework */; };
+		BF2FD6F32DF0846E00883B76 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF2FD6F22DF0846E00883B76 /* UIKit.framework */; };
+		BF2FD6F52DF0846E00883B76 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF2FD6F42DF0846E00883B76 /* Foundation.framework */; };
+		BF2FD6F72DF0846E00883B76 /* CydiaSubstrate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF2FD6F62DF0846E00883B76 /* CydiaSubstrate.framework */; };
+		BF9C31562E1294EF00FF67F1 /* Network.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF9C31552E1294EF00FF67F1 /* Network.framework */; };
+		BFB4EF1D2F03F83E004F7292 /* libroot.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BFB4EF1C2F03F83E004F7292 /* libroot.a */; };
+		BFE0B1EC2E40B9630084F9F3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFE0B1EB2E40B9630084F9F3 /* CoreGraphics.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		BF09ABB52E4CA1A400160C03 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		BF09ABB72E4CA1E600160C03 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		BF09ABB92E4CA33C00160C03 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/lib/libiconv.tbd; sourceTree = DEVELOPER_DIR; };
+		BF09AC2C2E4CB39B00160C03 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/lib/libz.tbd; sourceTree = DEVELOPER_DIR; };
+		BF2FD6EF2DF0846E00883B76 /* BiliBiliTweak.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = BiliBiliTweak.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF2FD6F22DF0846E00883B76 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		BF2FD6F42DF0846E00883B76 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		BF2FD6F62DF0846E00883B76 /* CydiaSubstrate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CydiaSubstrate.framework; path = Library/Frameworks/CydiaSubstrate.framework; sourceTree = DEVELOPER_DIR; };
+		BF9C31552E1294EF00FF67F1 /* Network.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Network.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks/Network.framework; sourceTree = DEVELOPER_DIR; };
+		BFB4EF1C2F03F83E004F7292 /* libroot.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libroot.a; path = ../../../../../../../opt/theos/vendor/lib/libroot.a; sourceTree = "<group>"; };
+		BFE0B1EB2E40B9630084F9F3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		BF2FD70D2DF0847500883B76 /* Exceptions for "BiliBiliTweak" folder in "BiliBiliTweak" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Package/Library/MobileSubstrate/DynamicLibraries/BiliBiliTweak.dylib,
+				src/Detail/NJDetailAd.xm,
+				src/Detail/NJDetailPlayerAd.xm,
+				src/Detail/PlaybackRate/NJDefaultPlaybackRate.xm,
+				src/Detail/PlaybackRate/NJPlaybackRate.xm,
+				src/Dynamic/NJDynamicAd.xm,
+				src/Home/HotTopic/NJHotTopicAd.xm,
+				src/Home/Live/NJLiveDetailAd.xm,
+				src/Home/Rcmd/NJRcmdAd.xm,
+				src/Home/Tab/NJTabAd.xm,
+				src/Launch/NJLaunchAd.x,
+				src/Logger/NJLogger.xm,
+				src/Network/NJNetworkService.xm,
+				src/Search/NJSearchResultAd.xm,
+				src/Setting/NJHD2Setting.xm,
+				src/Setting/NJSetting.xm,
+				src/Tool/Account/NJAccount.xm,
+				src/Tool/NJDebug.xm,
+			);
+			target = BF2FD6EE2DF0846E00883B76 /* BiliBiliTweak */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		BF2FD6F82DF0846E00883B76 /* BiliBiliTweak */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				BF2FD70D2DF0847500883B76 /* Exceptions for "BiliBiliTweak" folder in "BiliBiliTweak" target */,
+			);
+			explicitFileTypes = {
+				src/Detail/NJDetailAd.xm = sourcecode.cpp.objcpp;
+				src/Detail/NJDetailPlayerAd.xm = sourcecode.cpp.objcpp;
+				src/Detail/PlaybackRate/NJDefaultPlaybackRate.xm = sourcecode.cpp.objcpp;
+				src/Detail/PlaybackRate/NJPlaybackRate.xm = sourcecode.cpp.objcpp;
+				src/Dynamic/NJDynamicAd.xm = sourcecode.cpp.objcpp;
+				src/Home/HotTopic/NJHotTopicAd.xm = sourcecode.cpp.objcpp;
+				src/Home/Live/NJLiveDetailAd.xm = sourcecode.cpp.objcpp;
+				src/Home/Rcmd/NJRcmdAd.xm = sourcecode.cpp.objcpp;
+				src/Home/Tab/NJTabAd.xm = sourcecode.cpp.objcpp;
+				src/Launch/NJLaunchAd.x = sourcecode.c.objc;
+				src/Logger/NJLogger.xm = sourcecode.cpp.objcpp;
+				src/Network/NJNetworkService.xm = sourcecode.cpp.objcpp;
+				src/Search/NJSearchResultAd.xm = sourcecode.cpp.objcpp;
+				src/Setting/NJHD2Setting.xm = sourcecode.cpp.objcpp;
+				src/Setting/NJSetting.xm = sourcecode.cpp.objcpp;
+				src/Tool/Account/NJAccount.xm = sourcecode.cpp.objcpp;
+				src/Tool/NJDebug.xm = sourcecode.cpp.objcpp;
+			};
+			path = BiliBiliTweak;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BF2FD6EB2DF0846E00883B76 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFB4EF1D2F03F83E004F7292 /* libroot.a in Frameworks */,
+				BF09AC332E4CB56B00160C03 /* Security.framework in Frameworks */,
+				BF09AC322E4CB55C00160C03 /* libiconv.tbd in Frameworks */,
+				BF09AC312E4CB55200160C03 /* libz.tbd in Frameworks */,
+				BF2FD6F32DF0846E00883B76 /* UIKit.framework in Frameworks */,
+				BF2FD6F52DF0846E00883B76 /* Foundation.framework in Frameworks */,
+				BF09ABB62E4CA1A400160C03 /* QuartzCore.framework in Frameworks */,
+				BF2FD6F72DF0846E00883B76 /* CydiaSubstrate.framework in Frameworks */,
+				BFE0B1EC2E40B9630084F9F3 /* CoreGraphics.framework in Frameworks */,
+				BF9C31562E1294EF00FF67F1 /* Network.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BF2FD6E42DF0846E00883B76 = {
+			isa = PBXGroup;
+			children = (
+				BF2FD6F82DF0846E00883B76 /* BiliBiliTweak */,
+				BF2FD6F12DF0846E00883B76 /* Frameworks */,
+				BF2FD6F02DF0846E00883B76 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BF2FD6F02DF0846E00883B76 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BF2FD6EF2DF0846E00883B76 /* BiliBiliTweak.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BF2FD6F12DF0846E00883B76 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BFB4EF1C2F03F83E004F7292 /* libroot.a */,
+				BF09AC2C2E4CB39B00160C03 /* libz.tbd */,
+				BF09ABB92E4CA33C00160C03 /* libiconv.tbd */,
+				BF09ABB72E4CA1E600160C03 /* Security.framework */,
+				BF09ABB52E4CA1A400160C03 /* QuartzCore.framework */,
+				BFE0B1EB2E40B9630084F9F3 /* CoreGraphics.framework */,
+				BF9C31552E1294EF00FF67F1 /* Network.framework */,
+				BF2FD6F22DF0846E00883B76 /* UIKit.framework */,
+				BF2FD6F42DF0846E00883B76 /* Foundation.framework */,
+				BF2FD6F62DF0846E00883B76 /* CydiaSubstrate.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		BF2FD6EC2DF0846E00883B76 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		BF2FD6EE2DF0846E00883B76 /* BiliBiliTweak */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF2FD7062DF0846E00883B76 /* Build configuration list for PBXNativeTarget "BiliBiliTweak" */;
+			buildPhases = (
+				BF2FD6E92DF0846E00883B76 /* ShellScript */,
+				BF2FD6EA2DF0846E00883B76 /* Sources */,
+				BF2FD6EB2DF0846E00883B76 /* Frameworks */,
+				BF2FD6EC2DF0846E00883B76 /* Headers */,
+				BF2FD6ED2DF0846E00883B76 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				BF2FD6F82DF0846E00883B76 /* BiliBiliTweak */,
+			);
+			name = BiliBiliTweak;
+			packageProductDependencies = (
+			);
+			productName = BiliBiliTweak;
+			productReference = BF2FD6EF2DF0846E00883B76 /* BiliBiliTweak.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BF2FD6E52DF0846E00883B76 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					BF2FD6EE2DF0846E00883B76 = {
+						CreatedOnToolsVersion = 16.2;
+						LastSwiftMigration = 1620;
+					};
+				};
+			};
+			buildConfigurationList = BF2FD6E82DF0846E00883B76 /* Build configuration list for PBXProject "BiliBiliTweak" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BF2FD6E42DF0846E00883B76;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = BF2FD6F02DF0846E00883B76 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BF2FD6EE2DF0846E00883B76 /* BiliBiliTweak */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BF2FD6E92DF0846E00883B76 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/opt/MonkeyDev/bin/md --xcbp-logos\n";
+		};
+		BF2FD6ED2DF0846E00883B76 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/opt/MonkeyDev/bin/md --xcbp\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BF2FD6EA2DF0846E00883B76 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		BF2FD7072DF0846E00883B76 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = E435LNP339;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/BiliBiliTweak/src/Tool",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BiliBiliTweak/BiliBiliTweak-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"NJ_TWEAK=1",
+					HAVE_INTTYPES_H,
+					HAVE_PKCRYPT,
+					HAVE_STDINT_H,
+					HAVE_WZAES,
+					HAVE_ZLIB,
+				);
+				INSTALL_PATH = /Library/MobileSubstrate/DynamicLibraries;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/BiliBiliTweak/Package/Library/MobileSubstrate/DynamicLibraries",
+					/opt/theos/vendor/lib,
+					/opt/MonkeyDev/Librarys,
+				);
+				MonkeyDevBuildPackageOnAnyBuild = YES;
+				MonkeyDevClearUiCacheOnInstall = NO;
+				MonkeyDevCopyOnBuild = NO;
+				MonkeyDevDeviceIP = "";
+				MonkeyDevDevicePassword = "";
+				MonkeyDevDevicePort = "";
+				MonkeyDevInstallOnAnyBuild = YES;
+				MonkeyDevInstallOnProfiling = YES;
+				MonkeyDevRootless = NO;
+				MonkeyDevkillProcessOnInstall = SpringBoard;
+				OTHER_LDFLAGS = "$(inherited)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BiliBiliTweak/src/Tool/BiliBiliTweak-Bridging-Header.h";
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BF2FD7082DF0846E00883B76 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = E435LNP339;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/BiliBiliTweak/src/Tool",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BiliBiliTweak/BiliBiliTweak-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"NJ_TWEAK=1",
+					HAVE_INTTYPES_H,
+					HAVE_PKCRYPT,
+					HAVE_STDINT_H,
+					HAVE_WZAES,
+					HAVE_ZLIB,
+				);
+				INSTALL_PATH = /Library/MobileSubstrate/DynamicLibraries;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/BiliBiliTweak/Package/Library/MobileSubstrate/DynamicLibraries",
+					/opt/theos/vendor/lib,
+					/opt/MonkeyDev/Librarys,
+				);
+				MonkeyDevBuildPackageOnAnyBuild = YES;
+				MonkeyDevClearUiCacheOnInstall = NO;
+				MonkeyDevCopyOnBuild = NO;
+				MonkeyDevDeviceIP = "";
+				MonkeyDevDevicePassword = "";
+				MonkeyDevDevicePort = "";
+				MonkeyDevInstallOnAnyBuild = YES;
+				MonkeyDevInstallOnProfiling = YES;
+				MonkeyDevRootless = NO;
+				MonkeyDevkillProcessOnInstall = SpringBoard;
+				OTHER_LDFLAGS = "$(inherited)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BiliBiliTweak/src/Tool/BiliBiliTweak-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BF2FD7092DF0846E00883B76 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.gch (*) .DS_Store CVS .svn .git .hg *.xcodeproj *.xcode *.pbproj *.pbxproj";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(MonkeyDevPath)/frameworks/**",
+					"$(MonkeyDevTheosPath)/vendor/lib",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(MonkeyDevTheosPath)/vendor/include/**";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LIBRARY_SEARCH_PATHS = "$(MonkeyDevTheosPath)/vendor/lib/**";
+				MonkeyDevPath = /opt/MonkeyDev;
+				MonkeyDevTheosPath = /opt/theos;
+				OTHER_CFLAGS = "-DTHEOS_INSTANCE_NAME=\"\\\"BiliBiliTweak\\\"\"";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BF2FD70A2DF0846E00883B76 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.gch (*) .DS_Store CVS .svn .git .hg *.xcodeproj *.xcode *.pbproj *.pbxproj";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(MonkeyDevPath)/frameworks/**",
+					"$(MonkeyDevTheosPath)/vendor/lib",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(MonkeyDevTheosPath)/vendor/include/**";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LIBRARY_SEARCH_PATHS = "$(MonkeyDevTheosPath)/vendor/lib/**";
+				MonkeyDevPath = /opt/MonkeyDev;
+				MonkeyDevTheosPath = /opt/theos;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "-DTHEOS_INSTANCE_NAME=\"\\\"BiliBiliTweak\\\"\"";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = NO;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BF2FD6E82DF0846E00883B76 /* Build configuration list for PBXProject "BiliBiliTweak" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF2FD7092DF0846E00883B76 /* Release */,
+				BF2FD70A2DF0846E00883B76 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF2FD7062DF0846E00883B76 /* Build configuration list for PBXNativeTarget "BiliBiliTweak" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF2FD7072DF0846E00883B76 /* Release */,
+				BF2FD7082DF0846E00883B76 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BF2FD6E52DF0846E00883B76 /* Project object */;
+}

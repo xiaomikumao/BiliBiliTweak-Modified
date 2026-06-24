@@ -1,0 +1,11 @@
+Package: com.touchWorld.bilibiliTweak.patch
+Name: BiliBiliTweak Restore Patch
+Version: 1.0.0
+Architecture: iphoneos-arm64
+Description: 恢复 BiliBiliTweak 隐藏的直播间人数和礼物特效功能
+Maintainer: TouchWorld Patch <patch@bilibili.com>
+Author: TouchWorld Patch
+Section: Tweaks
+Depends: mobilesubstrate, com.touchWorld.bilibiliTweak (>= 3.0.0)
+Priority: optional
+Homepage: https://github.com/TouchFriend/BiliBiliTweak

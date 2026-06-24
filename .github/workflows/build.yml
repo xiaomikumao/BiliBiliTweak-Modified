@@ -1,0 +1,45 @@
+name: Build BiliBiliTweak Patch
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:  # 允许手动触发
+
+jobs:
+  build:
+    name: Build Tweak
+    runs-on: macos-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    
+    - name: Install Theos
+      run: |
+        git clone --recursive https://github.com/theos/theos.git $THEOS
+        echo "THEOS=$HOME/theos" >> $GITHUB_ENV
+        echo "$HOME/theos/bin" >> $GITHUB_PATH
+      env:
+        THEOS: ${{ runner.home }}/theos
+    
+    - name: Install iOS SDK
+      run: |
+        # 下载 iOS 16.5 SDK (兼容 14.0+)
+        curl -Lo $THEOS/sdks/iPhoneOS16.5.sdk.tar.gz https://github.com/theos/sdks/raw/master/iPhoneOS16.5.sdk.tar.gz
+        tar -xzf $THEOS/sdks/iPhoneOS16.5.sdk.tar.gz -C $THEOS/sdks/
+        rm $THEOS/sdks/iPhoneOS16.5.sdk.tar.gz
+    
+    - name: Build Tweak
+      run: |
+        make package FINALPACKAGE=1
+      env:
+        THEOS: ${{ runner.home }}/theos
+    
+    - name: Upload Deb Artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: BiliBiliTweakPatch.deb
+        path: packages/*.deb
+        retention-days: 90
