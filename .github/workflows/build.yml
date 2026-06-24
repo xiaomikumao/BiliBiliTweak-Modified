@@ -3,9 +3,7 @@ name: Build BiliBiliTweak Patch
 on:
   push:
     branches: [ main, master ]
-  pull_request:
-    branches: [ main, master ]
-  workflow_dispatch:  # 允许手动触发
+  workflow_dispatch:
 
 jobs:
   build:
@@ -14,32 +12,35 @@ jobs:
     
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
     
     - name: Install Theos
       run: |
+        export THEOS=$HOME/theos
         git clone --recursive https://github.com/theos/theos.git $THEOS
-        echo "THEOS=$HOME/theos" >> $GITHUB_ENV
-        echo "$HOME/theos/bin" >> $GITHUB_PATH
-      env:
-        THEOS: ${{ runner.home }}/theos
+        echo "THEOS=$THEOS" >> $GITHUB_ENV
+        echo "$THEOS/bin" >> $GITHUB_PATH
     
     - name: Install iOS SDK
       run: |
-        # 下载 iOS 16.5 SDK (兼容 14.0+)
-        curl -Lo $THEOS/sdks/iPhoneOS16.5.sdk.tar.gz https://github.com/theos/sdks/raw/master/iPhoneOS16.5.sdk.tar.gz
-        tar -xzf $THEOS/sdks/iPhoneOS16.5.sdk.tar.gz -C $THEOS/sdks/
-        rm $THEOS/sdks/iPhoneOS16.5.sdk.tar.gz
+        export THEOS=$HOME/theos
+        mkdir -p $THEOS/sdks
+        curl -Lo $THEOS/sdks/iPhoneOS16.5.sdk.tar.gz https://github.com/theos/sdks/raw/master/iPhoneOS16.5.sdk.tar.gz || \
+        curl -Lo $THEOS/sdks/iPhoneOS15.5.sdk.tar.gz https://github.com/theos/sdks/raw/master/iPhoneOS15.5.sdk.tar.gz && \
+        tar -xzf $THEOS/sdks/iPhoneOS15.5.sdk.tar.gz -C $THEOS/sdks/ || true
+        ls $THEOS/sdks/
+      env:
+        THEOS: ${{ env.THEOS }}
     
     - name: Build Tweak
       run: |
+        cd BiliBiliTweak-Patch
         make package FINALPACKAGE=1
       env:
-        THEOS: ${{ runner.home }}/theos
+        THEOS: ${{ env.THEOS }}
     
-    - name: Upload Deb Artifact
+    - name: Upload Deb
       uses: actions/upload-artifact@v4
       with:
         name: BiliBiliTweakPatch.deb
-        path: packages/*.deb
-        retention-days: 90
+        path: BiliBiliTweak-Patch/packages/*.deb
