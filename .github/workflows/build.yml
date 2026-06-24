@@ -38,7 +38,7 @@ jobs:
         THEOS: ${{ runner.home }}/theos
     
     - name: Upload Deb Artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: BiliBiliTweakPatch.deb
         path: packages/*.deb
