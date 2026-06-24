@@ -6,25 +6,19 @@
 %hook BBLiveBasePopularHotRankEntryView
 - (id)init {
     id result = %orig;
-    if ([result respondsToSelector:@selector(setHidden:)]) {
-        [result setHidden:NO];
-    }
+    ((UIView *)result).hidden = NO;
     return result;
 }
 
 - (id)initWithFrame:(CGRect)frame {
     id result = %orig;
-    if ([result respondsToSelector:@selector(setHidden:)]) {
-        [result setHidden:NO];
-    }
+    ((UIView *)result).hidden = NO;
     return result;
 }
 
 - (void)layoutSubviews {
     %orig;
-    if ([self respondsToSelector:@selector(setHidden:)]) {
-        [self setHidden:NO];
-    }
+    self.hidden = NO;
 }
 %end
 
@@ -32,25 +26,19 @@
 %hook BBLiveBasePopularRankEntryView
 - (id)init {
     id result = %orig;
-    if ([result respondsToSelector:@selector(setHidden:)]) {
-        [result setHidden:NO];
-    }
+    ((UIView *)result).hidden = NO;
     return result;
 }
 
 - (id)initWithFrame:(CGRect)frame {
     id result = %orig;
-    if ([result respondsToSelector:@selector(setHidden:)]) {
-        [result setHidden:NO];
-    }
+    ((UIView *)result).hidden = NO;
     return result;
 }
 
 - (void)layoutSubviews {
     %orig;
-    if ([self respondsToSelector:@selector(setHidden:)]) {
-        [self setHidden:NO];
-    }
+    self.hidden = NO;
 }
 %end
 
@@ -58,25 +46,19 @@
 %hook BBLiveBaseAnimationView
 - (id)init {
     id result = %orig;
-    if ([result respondsToSelector:@selector(setHidden:)]) {
-        [result setHidden:NO];
-    }
+    ((UIView *)result).hidden = NO;
     return result;
 }
 
 - (id)initWithFrame:(CGRect)frame {
     id result = %orig;
-    if ([result respondsToSelector:@selector(setHidden:)]) {
-        [result setHidden:NO];
-    }
+    ((UIView *)result).hidden = NO;
     return result;
 }
 
 - (void)layoutSubviews {
     %orig;
-    if ([self respondsToSelector:@selector(setHidden:)]) {
-        [self setHidden:NO];
-    }
+    self.hidden = NO;
 }
 
 - (void)setHidden:(BOOL)hidden {
