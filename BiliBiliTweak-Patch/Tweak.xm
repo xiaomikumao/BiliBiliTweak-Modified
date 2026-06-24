@@ -2,31 +2,33 @@
 #import <Foundation/Foundation.h>
 #import <objc/runtime.h>
 
-// 声明类接口，避免 forward declaration 错误
-__attribute__((unused)) static Class _cls_BBLiveBasePopularHotRankEntryView;
-__attribute__((unused)) static Class _cls_BBLiveBasePopularRankEntryView;
-__attribute__((unused)) static Class _cls_BBLiveBaseAnimationView;
+// 声明类接口，让编译器知道这些是 UIView 子类
+@interface BBLiveBasePopularHotRankEntryView : UIView
+@end
+
+@interface BBLiveBasePopularRankEntryView : UIView
+@end
+
+@interface BBLiveBaseAnimationView : UIView
+@end
 
 // 恢复直播间右上角热门排行入口
 %hook BBLiveBasePopularHotRankEntryView
 - (id)init {
     id result = %orig;
-    UIView *view = (UIView *)result;
-    [view setHidden:NO];
+    [(UIView *)result setHidden:NO];
     return result;
 }
 
 - (id)initWithFrame:(CGRect)frame {
     id result = %orig;
-    UIView *view = (UIView *)result;
-    [view setHidden:NO];
+    [(UIView *)result setHidden:NO];
     return result;
 }
 
 - (void)layoutSubviews {
     %orig;
-    [self performSelector:@selector(setHidden:) withObject:nil afterDelay:0];
-    objc_setAssociatedObject(self, "hidden", @NO, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    [self setHidden:NO];
 }
 %end
 
@@ -46,8 +48,7 @@ __attribute__((unused)) static Class _cls_BBLiveBaseAnimationView;
 
 - (void)layoutSubviews {
     %orig;
-    UIView *view = (UIView *)self;
-    [view setHidden:NO];
+    [self setHidden:NO];
 }
 %end
 
@@ -67,7 +68,7 @@ __attribute__((unused)) static Class _cls_BBLiveBaseAnimationView;
 
 - (void)layoutSubviews {
     %orig;
-    [(UIView *)self setHidden:NO];
+    [self setHidden:NO];
 }
 
 - (void)setHidden:(BOOL)hidden {
